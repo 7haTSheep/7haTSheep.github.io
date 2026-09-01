@@ -26,9 +26,10 @@ footer and shared copy live.
 
 ## Publishing on GitHub Pages
 
-1. Push this folder to a repo.
+1. Push this folder to the repo `7haTSheep/7haTSheep.github.io` (a GitHub *user
+   site* repo — the name must match the account name exactly).
 2. Repo → **Settings → Pages** → Source: *Deploy from a branch* → `main` / `/ (root)`.
-3. The site appears at `https://7haTSheep.github.io/<repo>/` within a minute or two.
+3. The site appears at `https://7haTSheep.github.io/` within a minute or two.
 
 ## Pointing daejhonneldenton.store at it
 
@@ -53,7 +54,7 @@ Then in the repo: **Settings -> Pages -> Custom domain** ->
 tick **Enforce HTTPS** (the certificate can take up to an hour to issue).
 
 DNS propagation is usually minutes, occasionally a few hours. Until it
-resolves, the site is still live at `7haTSheep.github.io/<repo>`.
+resolves, the site is still live at `7haTSheep.github.io`.
 
 ## Editing
 
