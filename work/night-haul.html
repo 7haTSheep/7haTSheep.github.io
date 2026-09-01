@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Night Haul — case study — Daejhonnel Denton</title>
+<meta name="description" content="A silhouette-noir hauling game in Godot 4 — systems design, art direction, and why I moved engines mid-project.">
+<meta name="author" content="Daejhonnel Denton">
+<meta name="theme-color" content="#0A0C0B">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Night Haul — case study — Daejhonnel Denton">
+<meta property="og:description" content="A silhouette-noir hauling game in Godot 4 — systems design, art direction, and why I moved engines mid-project.">
+<meta property="og:image" content="https://daejhonneldenton.store/assets/portrait.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <span class="mark">DD</span>
+      <span class="stack"><b>Daejhonnel Denton</b><span>Coronation Market and Software</span></span>
+    </a>
+    <div class="navlinks">
+      <a class="link on" href="../work.html">Work</a>
+      <a class="link" href="../about.html">About</a>
+      <a class="link" href="../services.html">Services</a>
+      <a class="link" href="../contact.html">Contact</a>
+      <a class="cta" href="https://wa.me/8765367328" target="_blank" rel="noopener">Hire me</a>
+    </div>
+  </div>
+</nav>
+
+
+<section class="case-hero"><div class="wrap">
+  <a class="back" href="../work.html"><span aria-hidden="true">&larr;</span> All work</a>
+  <p class="eyebrow">Case study &middot; Game</p>
+  <h1 style="font-size:clamp(40px,7vw,78px)">Night Haul</h1>
+  <p class="lead" style="margin-top:22px">You move cargo at night. The route is a decision, the load is a risk, and everything you see is a shape against light. Built in Godot 4, in production.</p>
+  <div class="meta">
+    <div><span>Role</span><b>Design, systems, implementation</b></div>
+    <div><span>Engine</span><b>Godot 4 (moved from Unreal 5)</b></div>
+    <div><span>Look</span><b>Silhouette noir</b></div>
+    <div><span>Status</span><b>In production</b></div>
+  </div>
+</div></section>
+
+<section class="sec" style="padding-top:clamp(40px,6vw,70px)"><div class="wrap"><div class="prose">
+
+<h2 style="margin-top:0">The idea</h2>
+<p>A hauling game where the interesting choices happen before the drive. Which load, which route, how much risk you're willing to carry for the fee &mdash; and then living with it in the dark, where you can see the shape of a problem long before you can see what it is.</p>
+
+<div class="pull">The dark isn't a mood. It's the mechanic that makes every other decision cost something.</div>
+
+<h2>Silhouette noir</h2>
+<p>The art direction is a constraint dressed as a style. Objects read as <strong>shapes against light</strong> rather than as textured models: headlamps, signage, a window, a fire. It gives the game a look that's genuinely its own, and it means a solo developer isn't competing on texture budgets he doesn't have.</p>
+<p>Lighting does the work that art assets normally do. What you can see is a design lever &mdash; pull light away and tension appears for free; put a lamp somewhere and you've made a landmark.</p>
+
+<div class="grid3">
+  <div class="tile"><div class="ic">Routes</div><h3>Choice with teeth</h3><p>Faster is riskier, and the map is a set of trade-offs rather than a shortest path.</p></div>
+  <div class="tile"><div class="ic">Cargo</div><h3>Load as constraint</h3><p>What you carry changes how you drive, what you can afford to lose, and who's interested in it.</p></div>
+  <div class="tile"><div class="ic">Risk</div><h3>Pressure, not jumpscares</h3><p>The threat model is being seen and being slow, built out of light and time rather than combat.</p></div>
+</div>
+
+<h2>The engine call</h2>
+<p>It started in Unreal 5. Unreal is superb at photoreal fidelity, which is precisely the thing this game had decided not to compete on &mdash; and the cost of that fidelity showed up as iteration time, build weight and a lot of machinery I was fighting past rather than using.</p>
+<p>I moved it to <strong>Godot 4</strong>. Smaller, faster to iterate, and its lighting and 2D/3D hybrid tooling sit much closer to what silhouette noir actually needs. It cost real weeks to switch.</p>
+<p>I include it here on purpose, because it's the kind of decision I'd want to see from someone I was hiring: I noticed the tool was wrong for the design, checked that I wasn't just avoiding a hard part, and paid the switching cost while it was still cheap rather than defending the original choice for another year.</p>
+
+<h2>Where it is</h2>
+<p>Pre-production is done: the design document, the core loop, the art direction and the vertical-slice targets are written down and settled. Current work is systems &mdash; routes, cargo, risk, and the night itself &mdash; in Godot 4, in a repo with the design doc versioned next to the code.</p>
+
+<h2>What it demonstrates</h2>
+<ul>
+  <li><strong>I finish the thinking before I write the code.</strong> Concept source, design doc, then systems.</li>
+  <li><strong>I can change my mind expensively.</strong> The engine pivot was the right call and I made it early.</li>
+  <li><strong>I design inside constraints.</strong> Solo scope, turned into a look nobody else has.</li>
+</ul>
+
+</div></div></section>
+
+<section class="sec"><div class="wrap"><div class="band rv">
+  <h2>Want to talk shop?</h2>
+  <p class="lead">Games, tools, or anything with a systems problem in it — I'm easy to reach.</p>
+  <div class="herobtns">
+    <a class="btn btn-p" href="https://wa.me/8765367328" target="_blank" rel="noopener">WhatsApp 876 536 7328</a>
+    <a class="btn btn-g" href="mailto:kymanidenton7@gmail.com">Email me</a>
+  </div>
+</div></div></section>
+
+<footer>
+  <div class="wrap fgrid">
+    <div>
+      <div class="small" style="color:var(--paper)">Daejhonnel Denton &middot; Coronation Market and Software</div>
+      <div class="small">Kingston, Jamaica &middot; Available worldwide &middot; &copy; <span data-year></span></div>
+    </div>
+    <div class="flinks">
+      <a href="../work.html">Work</a>
+      <a href="../about.html">About</a>
+      <a href="../services.html">Services</a>
+      <a href="../contact.html">Contact</a>
+      <a href="https://github.com/7haTSheep" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:kymanidenton7@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+<a class="wa" href="https://wa.me/8765367328" target="_blank" rel="noopener" aria-label="Message me on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.86 9.86 0 0 0 4.76 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg></a>
+<script src="../assets/site.js"></script>
+</body>
+</html>
