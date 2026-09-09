@@ -415,3 +415,29 @@ footer .small{color:var(--mute-2)}
 }
 .portrait::after{z-index:3}
 .portrait img{filter:saturate(1.02) contrast(1.03)}
+
+/* ---------- project brief form ---------- */
+.brief-form{position:relative; border:1px solid var(--line-2); background:linear-gradient(145deg,rgba(224,163,60,.09),rgba(17,21,20,.92) 42%); padding:clamp(24px,4vw,38px); overflow:hidden}
+.brief-form::after{content:'BRIEF'; position:absolute; right:-.06em; top:-.2em; font:800 clamp(62px,10vw,128px)/1 var(--sans); letter-spacing:-.1em; color:rgba(224,163,60,.045); pointer-events:none}
+.form-head,.form-grid,.form-foot{position:relative; z-index:1}
+.form-count{display:block; margin-bottom:15px; color:var(--gold); font:11px/1 var(--mono); letter-spacing:.14em}
+.form-head h2{font-size:clamp(29px,4vw,42px); margin-bottom:10px}
+.form-head p{max-width:48ch; color:var(--mute); font-size:15px; margin:0}
+.form-grid{display:grid; grid-template-columns:1fr 1fr; gap:17px; margin-top:30px}
+.form-grid label{display:flex; flex-direction:column; gap:7px; min-width:0}
+.form-grid label.wide{grid-column:1/-1}
+.form-grid label>span{color:var(--paper); font:10.5px/1.3 var(--mono); letter-spacing:.1em; text-transform:uppercase}
+.form-grid em{color:var(--mute-2); font-style:normal}
+.form-grid input,.form-grid select,.form-grid textarea{width:100%; appearance:none; -webkit-appearance:none; border:1px solid var(--line-2); border-radius:0; outline:0; background:rgba(10,12,11,.72); color:var(--paper); font:15px/1.4 var(--sans); padding:12px 13px; transition:border-color .2s,background .2s,box-shadow .2s}
+.form-grid select{background-image:linear-gradient(45deg,transparent 50%,var(--gold) 50%),linear-gradient(135deg,var(--gold) 50%,transparent 50%); background-position:calc(100% - 16px) 50%,calc(100% - 11px) 50%; background-size:5px 5px,5px 5px; background-repeat:no-repeat; padding-right:35px}
+.form-grid select option{background:var(--ink-2); color:var(--paper)}
+.form-grid textarea{resize:vertical; min-height:130px}
+.form-grid input::placeholder,.form-grid textarea::placeholder{color:var(--mute-2); opacity:1}
+.form-grid input:focus,.form-grid select:focus,.form-grid textarea:focus{border-color:var(--gold); background:rgba(10,12,11,.96); box-shadow:0 0 0 3px rgba(224,163,60,.1)}
+.form-foot{display:flex; gap:18px; align-items:center; justify-content:space-between; border-top:1px solid var(--line); margin-top:25px; padding-top:19px}
+.form-foot p{max-width:43ch; margin:0; color:var(--mute-2); font-size:12.5px; line-height:1.45}
+.form-foot button{font-family:var(--sans); border:0; cursor:pointer; white-space:nowrap}
+.trap{position:absolute!important; left:-10000px!important; width:1px!important; height:1px!important; opacity:0!important}
+.hours-panel{margin-bottom:0}
+.thanks{min-height:62vh; display:flex; align-items:center}
+@media(max-width:620px){.form-grid{grid-template-columns:1fr}.form-grid label.wide{grid-column:auto}.form-foot{align-items:flex-start; flex-direction:column}.form-foot .btn{width:100%; justify-content:center}}
