@@ -699,6 +699,7 @@ ct += f"""
   <p class="eyebrow">Contact</p>
   <h1 style="font-size:clamp(40px,7vw,80px)">Let's talk.</h1>
   <p class="lead" style="margin-top:24px">Tell me what you're trying to build or what's broken. Two sentences is enough to start &mdash; I'll come back with questions, a rough number, and whether I'm the right person.</p>
+  <div class="herobtns"><a class="btn btn-p" href="#website-fit">Take the website fit check <span aria-hidden="true">&rarr;</span></a><a class="btn btn-g" href="https://wa.me/{TEL}" target="_blank" rel="noopener">Message on WhatsApp</a></div>
 </div></section>
 
 <section class="sec" style="padding-top:0"><div class="wrap">
@@ -730,28 +731,68 @@ ct += f"""
       </div>
     </div>
     <div class="rv">
-      <form class="brief-form" action="https://formsubmit.co/{MAIL}" method="POST">
-        <input type="hidden" name="_subject" value="New project enquiry — daejhonneldenton.store">
+      <form id="website-fit" class="brief-form quiz-form" action="https://formsubmit.co/{MAIL}" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="New website fit check — daejhonneldenton.store">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_next" value="{SITE}/thanks.html">
         <input class="trap" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="form-head">
-          <span class="form-count">01 / PROJECT BRIEF</span>
-          <h2>Give me the useful version.</h2>
-          <p>You do not need a formal spec. Fill this in and it lands directly in my inbox.</p>
+          <span class="form-count" data-quiz-count>01 / 03 &mdash; WEBSITE FIT CHECK</span>
+          <h2>Let&rsquo;s map your website.</h2>
+          <p>Answer a few quick questions. I&rsquo;ll receive the finished brief and reply with the sensible next step.</p>
         </div>
-        <div class="form-grid">
-          <label><span>Your name</span><input name="name" autocomplete="name" required placeholder="Your name"></label>
-          <label><span>Email</span><input name="email" type="email" autocomplete="email" required placeholder="you@company.com"></label>
-          <label><span>Phone / WhatsApp <em>optional</em></span><input name="phone" type="tel" autocomplete="tel" placeholder="876 000 0000"></label>
-          <label><span>What do you need?</span><select name="project_type" required><option value="" selected disabled>Choose one</option><option>Business website</option><option>Same-day fix</option><option>Android app</option><option>Custom web application</option><option>Marketplace or payments build</option><option>Something else</option></select></label>
-          <label><span>Budget range</span><select name="budget" required><option value="" selected disabled>Choose a range</option><option>Under J$85,000 / US$530</option><option>J$85,000–J$250,000 / US$530–US$1,560</option><option>J$250,000–J$650,000 / US$1,560–US$4,060</option><option>J$650,000+ / US$4,060+</option><option>Not sure yet</option></select></label>
-          <label><span>Ideal launch date</span><input name="timeline" placeholder="e.g. within 2 weeks"></label>
-          <label class="wide"><span>What needs to happen?</span><textarea name="project_details" required rows="5" placeholder="What does the business do? What should the site or app help people do? Is there anything already built?"></textarea></label>
-        </div>
-        <div class="form-foot">
-          <p>By sending this, you’re sharing these details with Daejhonnel so he can reply about your project.</p>
-          <button class="btn btn-p" type="submit">Send project brief <span aria-hidden="true">&rarr;</span></button>
+        <div class="quiz-progress" aria-hidden="true"><i></i><i></i><i></i></div>
+
+        <fieldset class="quiz-step" data-step="1">
+          <legend>First, what are we building for?</legend>
+          <div class="quiz-question"><span>What kind of business is this?</span><div class="choice-grid">
+            <label><input type="radio" name="business_type" value="Restaurant or food business" required><b>Restaurant / food</b></label>
+            <label><input type="radio" name="business_type" value="Salon, barber or beauty business"><b>Beauty / wellness</b></label>
+            <label><input type="radio" name="business_type" value="Shop, product or retail business"><b>Shop / retail</b></label>
+            <label><input type="radio" name="business_type" value="Professional or local service"><b>Local service</b></label>
+            <label><input type="radio" name="business_type" value="Creator, personal brand or other"><b>Something else</b></label>
+          </div></div>
+          <div class="quiz-question"><span>What should the website do first?</span><div class="choice-grid">
+            <label><input type="radio" name="primary_goal" value="Help customers find the business on Google" required><b>Help people find me</b></label>
+            <label><input type="radio" name="primary_goal" value="Get calls or WhatsApp enquiries"><b>Get messages / calls</b></label>
+            <label><input type="radio" name="primary_goal" value="Show services, menu or price list"><b>Show what I offer</b></label>
+            <label><input type="radio" name="primary_goal" value="Sell products or accept online orders"><b>Take orders / sell</b></label>
+          </div></div>
+        </fieldset>
+
+        <fieldset class="quiz-step" data-step="2" hidden>
+          <legend>What do you have already?</legend>
+          <div class="quiz-question"><span>Do you have a current website?</span><div class="choice-grid compact">
+            <label><input type="radio" name="current_site" value="No website yet" required><b>No, starting fresh</b></label>
+            <label><input type="radio" name="current_site" value="Yes, needs an update"><b>Yes, needs an update</b></label>
+            <label><input type="radio" name="current_site" value="Yes, but it is broken"><b>Yes, but it is broken</b></label>
+          </div></div>
+          <div class="quiz-question"><span>Which materials can you provide?</span><div class="choice-grid">
+            <label><input type="checkbox" name="available_materials" value="Logo"><b>Logo</b></label>
+            <label><input type="checkbox" name="available_materials" value="Photos or product images"><b>Photos</b></label>
+            <label><input type="checkbox" name="available_materials" value="Menu, services or price list"><b>Menu / price list</b></label>
+            <label><input type="checkbox" name="available_materials" value="Business address and opening hours"><b>Location / hours</b></label>
+            <label><input type="checkbox" name="available_materials" value="Need help gathering content"><b>I need help with this</b></label>
+          </div></div>
+          <label class="quiz-note"><span>Existing website or Instagram <em>optional</em></span><input name="existing_link" type="url" placeholder="https://"></label>
+        </fieldset>
+
+        <fieldset class="quiz-step" data-step="3" hidden>
+          <legend>Where should I send the answer?</legend>
+          <div class="form-grid">
+            <label><span>Your name</span><input name="name" autocomplete="name" required placeholder="Your name"></label>
+            <label><span>Email</span><input name="email" type="email" autocomplete="email" required placeholder="you@company.com"></label>
+            <label><span>Phone / WhatsApp</span><input name="phone" type="tel" autocomplete="tel" required placeholder="876 000 0000"></label>
+            <label><span>Budget comfort zone</span><select name="budget" required><option value="" selected disabled>Choose a range</option><option>Under J$85,000 / US$530</option><option>J$85,000–J$125,000 / US$530–US$780</option><option>J$125,000–J$250,000 / US$780–US$1,560</option><option>J$250,000+ / US$1,560+</option><option>Not sure yet</option></select></label>
+            <label><span>When do you want to launch?</span><select name="timeline" required><option value="" selected disabled>Choose a timeframe</option><option>As soon as possible</option><option>Within 2 weeks</option><option>Within a month</option><option>Just researching</option></select></label>
+            <label><span>Anything else I should know? <em>optional</em></span><input name="notes" placeholder="A deadline, a problem, or an idea"></label>
+          </div>
+        </fieldset>
+        <div class="form-foot quiz-actions">
+          <button class="btn btn-g" type="button" data-quiz-back hidden>&larr; Back</button>
+          <p data-quiz-message>About two minutes. No obligation, no spam.</p>
+          <button class="btn btn-p" type="button" data-quiz-next>Next question <span aria-hidden="true">&rarr;</span></button>
+          <button class="btn btn-p" type="submit" data-quiz-submit hidden>Send my website brief <span aria-hidden="true">&rarr;</span></button>
         </div>
       </form>
       <div class="panel hours-panel">

@@ -441,3 +441,25 @@ footer .small{color:var(--mute-2)}
 .hours-panel{margin-bottom:0}
 .thanks{min-height:62vh; display:flex; align-items:center}
 @media(max-width:620px){.form-grid{grid-template-columns:1fr}.form-grid label.wide{grid-column:auto}.form-foot{align-items:flex-start; flex-direction:column}.form-foot .btn{width:100%; justify-content:center}}
+
+/* ---------- website fit check ---------- */
+.quiz-form fieldset{border:0; margin:30px 0 0; padding:0; min-width:0}
+.quiz-form legend{font-size:clamp(21px,2.8vw,28px); font-weight:600; letter-spacing:-.025em; margin:0 0 24px; padding:0}
+.quiz-progress{position:relative; z-index:1; display:grid; grid-template-columns:repeat(3,1fr); gap:7px; margin-top:28px}
+.quiz-progress i{display:block; height:3px; background:var(--line-2); transition:background .25s}
+.quiz-progress i.on{background:var(--gold)}
+.quiz-question+.quiz-question{margin-top:25px}
+.quiz-question>span,.quiz-note>span{display:block; margin-bottom:10px; color:var(--paper); font:10.5px/1.3 var(--mono); letter-spacing:.1em; text-transform:uppercase}
+.choice-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:10px}
+.choice-grid.compact{grid-template-columns:repeat(3,1fr)}
+.choice-grid label{display:block; cursor:pointer; min-width:0}
+.choice-grid input{position:absolute; opacity:0; pointer-events:none}
+.choice-grid b{display:flex; align-items:center; min-height:58px; border:1px solid var(--line-2); background:rgba(10,12,11,.56); padding:12px 13px; color:var(--mute); font-size:14px; line-height:1.3; font-weight:500; transition:border-color .2s,background .2s,color .2s,transform .2s}
+.choice-grid label:hover b{border-color:rgba(224,163,60,.55); color:var(--paper)}
+.choice-grid input:checked+b{border-color:var(--gold); background:rgba(224,163,60,.14); color:var(--paper); box-shadow:inset 3px 0 var(--gold)}
+.choice-grid input:focus-visible+b{outline:2px solid var(--gold); outline-offset:2px}
+.quiz-note{display:block; margin-top:25px}
+.quiz-note input{width:100%}
+.quiz-actions{min-height:55px}
+.quiz-actions .btn-g{margin-right:auto}
+@media(max-width:620px){.choice-grid,.choice-grid.compact{grid-template-columns:1fr}.choice-grid b{min-height:52px}.quiz-actions .btn-g{margin-right:0}.quiz-actions p{order:3}}
