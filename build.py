@@ -10,7 +10,6 @@ TEL  = "8764396051"
 TELP = "876 439 6051"
 MAIL = "kymanidenton7@gmail.com"
 GH   = "https://github.com/7haTSheep"
-FX_RATE = 160  # JMD per USD — rounded planning reference, not a live checkout rate.
 
 def head(title, desc, rel="", page=""):
     return f"""<!doctype html>
@@ -138,15 +137,6 @@ def band(title, sub):
     <a class="btn btn-g" href="mailto:{MAIL}">Email me</a>
   </div>
 </div></div></section>"""
-
-def pricing_row(label, jmd, scope, featured=False):
-    usd = round(jmd / FX_RATE / 10) * 10
-    featured_class = " featured" if featured else ""
-    return f"""<article class="price-row{featured_class} rv">
-  <div class="price-service"><h3>{label}</h3><p>{scope}</p></div>
-  <div class="price-values"><span class="price-jmd">From J${jmd:,.0f}</span><span class="price-usd">~US${usd:,.0f}</span></div>
-  <a class="price-ask" href="https://wa.me/{TEL}?text=Hi%20Daejhonnel%20%E2%80%94%20I%27m%20interested%20in%20{label.replace(' ', '%20').replace('&', '%26')}." target="_blank" rel="noopener">Ask about it <span aria-hidden="true">&rarr;</span></a>
-</article>"""
 
 # ---------------------------------------------------------------- index
 
@@ -554,34 +544,6 @@ sv += f"""
   </div>
 </div></section>
 
-<section class="sec pricing" id="pricing"><div class="wrap">
-  <div class="pricing-intro rv">
-    <div>
-      <p class="eyebrow">Starting prices</p>
-      <h2>Clear numbers before we talk.</h2>
-    </div>
-    <p class="lead">These are starting investments for a defined first release. The final quote is fixed in writing after scope — no surprise hourly bill.</p>
-  </div>
-
-  <div class="price-board">
-    <div class="price-board-head">
-      <span>What you need</span><span>Starting investment</span><span>Next step</span>
-    </div>
-    {pricing_row("Same-day patch", 12500, "A broken form, checkout, mobile layout or deployment problem. One clearly defined fix.")}
-    {pricing_row("Business website", 85000, "A focused one- or two-page site with your photos, services, location and a direct WhatsApp contact path.", True)}
-    {pricing_row("Business launch setup", 125000, "Website plus Google Business Profile and WhatsApp Business setup — designed to help customers find and contact you.")}
-    {pricing_row("Android app MVP", 450000, "A first Android release with core screens, backend connection and Play Store-ready delivery.")}
-    {pricing_row("Custom web application", 650000, "A real logged-in product: data model, roles, admin and a focused first release.")}
-    {pricing_row("Marketplace or payments build", 1250000, "Multi-user platforms, wallets, escrow or payouts. Starts with a paid discovery and technical plan.")}
-  </div>
-
-  <div class="price-notes rv">
-    <p><b>Currency:</b> JMD is the quoted currency. USD is an approximate reference at J$160 = US$1, rounded for readability.</p>
-    <p><b>Payment:</b> Small builds are 50% to begin and 50% at delivery. Larger projects are split into milestones.</p>
-    <p><b>Included:</b> A live preview during the build, a proper handover, and two weeks of post-launch fixes.</p>
-  </div>
-</div></section>
-
 <section class="sec" style="padding-top:0"><div class="wrap">
   <div class="sec-head rv">
     <p class="eyebrow">Working with me</p>
@@ -783,7 +745,7 @@ ct += f"""
             <label><span>Your name</span><input name="name" autocomplete="name" required placeholder="Your name"></label>
             <label><span>Email</span><input name="email" type="email" autocomplete="email" required placeholder="you@company.com"></label>
             <label><span>Phone / WhatsApp</span><input name="phone" type="tel" autocomplete="tel" required placeholder="876 000 0000"></label>
-            <label><span>Budget comfort zone</span><select name="budget" required><option value="" selected disabled>Choose a range</option><option>Under J$85,000 / US$530</option><option>J$85,000–J$125,000 / US$530–US$780</option><option>J$125,000–J$250,000 / US$780–US$1,560</option><option>J$250,000+ / US$1,560+</option><option>Not sure yet</option></select></label>
+            <label><span>Budget comfort zone</span><select name="budget" required><option value="" selected disabled>Choose a level</option><option>Keeping it lean</option><option>Ready for a solid business website</option><option>Planning a larger project</option><option>Not sure yet</option></select></label>
             <label><span>When do you want to launch?</span><select name="timeline" required><option value="" selected disabled>Choose a timeframe</option><option>As soon as possible</option><option>Within 2 weeks</option><option>Within a month</option><option>Just researching</option></select></label>
             <label><span>Anything else I should know? <em>optional</em></span><input name="notes" placeholder="A deadline, a problem, or an idea"></label>
           </div>
